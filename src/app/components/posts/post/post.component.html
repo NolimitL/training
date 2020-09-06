@@ -1,0 +1,20 @@
+
+<div class="card">
+  <button class="btn" [routerLink]="['/posts']">Back</button>
+
+  <button
+    class="btn"
+    [routerLink]="['/posts', post.id]"
+    [queryParams]="{showID:false}"
+  >Hide ids</button>
+
+  <button
+    class="btn"
+    (click)="hideID()"
+  >Hide ids through code</button>
+
+  <h3><strong *ngIf="showID">ID: {{post.id}}</strong><br>Title of post: {{post.title}}</h3>
+  <p>Text: {{post.text  }}</p>
+  <button class="btn" [routerLink]="['/posts', lastIdPost]">Goto last post</button>
+  <button class="btn" (click)="goto4()">Goto last post with params</button>
+</div>

@@ -1,0 +1,9 @@
+<h3>Posts list page</h3>
+<div class="card" *ngFor="let post of gettedList">
+  <h3>
+    <a [routerLink]="['/posts', post.id]">
+      <strong>(ID:{{post.id}})</strong>
+      <h4>Completed: {{post.completed}}</h4>
+    </a>
+  </h3>
+</div>
