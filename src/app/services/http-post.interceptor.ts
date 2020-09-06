@@ -8,7 +8,7 @@ export class HttpPostInterceptor implements HttpInterceptor{
 
     const clonedReq = req.clone({
       headers: req.headers.append('plus-header-intreceptor','true'),
-      params: req.params.set('_limit','15')
+      // params: req.params.set('_limit','15')
     })
     return next.handle(clonedReq)
               .pipe(

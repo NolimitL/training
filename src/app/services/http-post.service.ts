@@ -8,13 +8,18 @@ import { GettedPost } from '../interfaces/posts.interface';
 export class HTTPPostService{
 
   postlist:GettedPost[] = []
+  amountPosts:number
 
   constructor(private http: HttpClient){}
+
+  setHowMuch(amount:number = 20){
+    this.amountPosts = amount
+  }
 
   getList(): Observable<any> | GettedPost{
     return this.http.get('https://jsonplaceholder.typicode.com/todos',{
       params:{
-        '_limit':'10'
+        '_limit':this.amountPosts+''
       }
     }).pipe(
       tap(val => console.log("Data from SERVICE:", val))

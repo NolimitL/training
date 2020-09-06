@@ -2,4 +2,6 @@
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit id non provident. At, necessitatibus libero quos, fugiat possimus vitae obcaecati natus accusantium odit incidunt repudiandae ad? Fugiat illo provident asperiores?</p>
 <p><a [routerLink]="['/about', 'about-extra']">Show extra...</a></p>
 <p><a (click)="hideExtra()">Hide extra... (through code)</a></p>
+<button class="btn" (click)="showModal()">Show it</button>
+<ng-template modalWindow></ng-template>
 <router-outlet></router-outlet>
